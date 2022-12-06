@@ -29,7 +29,7 @@ sequenceDiagram
     server->>browser: raw data of the notes
 ```
 
-note ofer browser:<br />
+note over browser:<br />
 browser requests updated html code<br />
 browser requests css code<br />
 browser requests javascript code<br />
@@ -52,3 +52,19 @@ sequenceDiagram
     browser->>server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
     server->>browser: notes data
 ```
+
+0.6: New note in Single page app diagram
+<br /><br />
+
+```mermaid
+sequenceDiagram
+    participant browser
+    participant server
+    browser->>server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+    server->>browser: HTTP status code 201 - updated notes list
+```
+
+note over browser:<br />
+browser sends the user input to the server<br />
+browser fetches notes data from the server<br />
+end note<br />
