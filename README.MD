@@ -34,3 +34,19 @@ browser requests css code
 browser requests javascript code
 that requests JSON data from server 
 end note
+
+0.5: Single page app diagram
+
+```mermaid
+sequenceDiagram
+    participant browser
+    participant server
+    browser->>server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa
+    server->>browser: html code
+    browser->>server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+    server->>browser: css code
+    browser->>server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa.js
+    server->>browser: javascript code
+    browser->>server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+    server->>browser: notes data
+```
